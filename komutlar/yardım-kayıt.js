@@ -4,7 +4,7 @@ const { prefix } = require('../ayarlar.json');
 
 exports.run = async(client, message, args) => {
 
-    let moderasyonsize = client.commands.filter(cmds => cmds.help.kategori == "yardım").map(cmd0 => cmd0.help.kategori == "yardım").length;
+    let moderasyonsize = client.commands.filter(cmds => cmds.help.kategori == "kayıt").map(cmd0 => cmd0.help.kategori == "kayıt").length;
 
   const embed = new MessageEmbed()
 
@@ -21,11 +21,11 @@ exports.run = async(client, message, args) => {
 ║<:879812557530087434:881951009646211143>  **Bu Bot Narcos Code Tarafından Yapılmıştır. 
 ║ Ultra Gelişmiş Ayarlamalı Kayıt Botu**
 ║
-╠═════════════╣Ana Menü╠═══════════════════
+╠═════════════╣Kayıt Menü╠═══════════════════
 ║
 ${client.commands
 
-  .filter(c=>c.help.kategori=== "yardım")
+  .filter(c=>c.help.kategori=== "kayıt")
 
   .map(kmt=>`║ <:880072774041878609:881951010057240626> **${prefix}${kmt.help.name}** = ${kmt.help.description || "**Açıklama Eklenmemiş**"}`)
 
@@ -50,7 +50,7 @@ exports.conf = {
 
   guildOnly: false,
 
-  aliases: ["help"],
+  aliases: ["help-register"],
 
   permLevel: 0,
 
@@ -60,12 +60,12 @@ exports.conf = {
 
 exports.help = {
 
-  name: 'yardım',
+  name: 'yardım-kayıt',
 
-  description: 'Botun tüm  komutlarını görürsün.',
+  description: 'Botun Kayıt  komutlarını görürsün.',
 
-  usage: '!yardım',
+  usage: '!yardım-kayıt',
 
-  kategori: ""
+  kategori: "yardım"
 
 };
